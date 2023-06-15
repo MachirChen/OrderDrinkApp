@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684A2A31CB1400498F08 /* UIViewController+.swift */; };
+		251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684E2A32445400498F08 /* DrinkDetailViewController.swift */; };
+		251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */; };
 		256FC2972A30E30800355378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2962A30E30800355378 /* AppDelegate.swift */; };
 		256FC2992A30E30800355378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2982A30E30800355378 /* SceneDelegate.swift */; };
 		256FC29B2A30E30800355378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC29A2A30E30800355378 /* ViewController.swift */; };
 		256FC29E2A30E30800355378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256FC29C2A30E30800355378 /* Main.storyboard */; };
 		256FC2A02A30E30A00355378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256FC29F2A30E30A00355378 /* Assets.xcassets */; };
 		256FC2A32A30E30A00355378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256FC2A12A30E30A00355378 /* LaunchScreen.storyboard */; };
+		256FC2AC2A30E40000355378 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2AB2A30E40000355378 /* TabBarViewController.swift */; };
+		256FC2B22A30F18100355378 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2B12A30F18100355378 /* MenuViewController.swift */; };
+		256FC2D82A319D9900355378 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2D72A319D9900355378 /* MenuCollectionViewCell.swift */; };
+		256FC2DA2A31A79200355378 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2D92A31A79200355378 /* NavigationController.swift */; };
+		256FC2DD2A31B44200355378 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2DC2A31B44200355378 /* UIColor+.swift */; };
+		257C8E302A340AE800BCF65C /* MenuRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E2F2A340AE800BCF65C /* MenuRequestProvider.swift */; };
+		257C8E322A341CE700BCF65C /* MenuDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E312A341CE700BCF65C /* MenuDataModel.swift */; };
+		257C8E342A341E0F00BCF65C /* MenuFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E332A341E0F00BCF65C /* MenuFromJson.swift */; };
+		257C8E592A38153300BCF65C /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E582A38153300BCF65C /* SelectionButton.swift */; };
+		257C8E5C2A3817F300BCF65C /* CustomItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */; };
+		257C8E5E2A39603C00BCF65C /* DrinkDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E5D2A39603C00BCF65C /* DrinkDetailBottomView.swift */; };
+		FDFCF1D733C7E69C7E59AF80 /* Pods_OrderDrinkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7D5519419997990A5F8D59 /* Pods_OrderDrinkApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		251E684A2A31CB1400498F08 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		251E684E2A32445400498F08 /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
+		251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		256FC2932A30E30800355378 /* OrderDrinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderDrinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256FC2962A30E30800355378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		256FC2982A30E30800355378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +42,20 @@
 		256FC29F2A30E30A00355378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		256FC2A22A30E30A00355378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		256FC2A42A30E30A00355378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		256FC2AB2A30E40000355378 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		256FC2B12A30F18100355378 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		256FC2D72A319D9900355378 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		256FC2D92A31A79200355378 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		256FC2DC2A31B44200355378 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		257C8E2F2A340AE800BCF65C /* MenuRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRequestProvider.swift; sourceTree = "<group>"; };
+		257C8E312A341CE700BCF65C /* MenuDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataModel.swift; sourceTree = "<group>"; };
+		257C8E332A341E0F00BCF65C /* MenuFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFromJson.swift; sourceTree = "<group>"; };
+		257C8E582A38153300BCF65C /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
+		257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemModel.swift; sourceTree = "<group>"; };
+		257C8E5D2A39603C00BCF65C /* DrinkDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailBottomView.swift; sourceTree = "<group>"; };
+		8B45877DCEE3A40DC8780D47 /* Pods-OrderDrinkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderDrinkApp.debug.xcconfig"; path = "Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp.debug.xcconfig"; sourceTree = "<group>"; };
+		988E11E5CFC1A2A0A711DB83 /* Pods-OrderDrinkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderDrinkApp.release.xcconfig"; path = "Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp.release.xcconfig"; sourceTree = "<group>"; };
+		FC7D5519419997990A5F8D59 /* Pods_OrderDrinkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderDrinkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +63,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFCF1D733C7E69C7E59AF80 /* Pods_OrderDrinkApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251E684D2A32436C00498F08 /* DrinkDetail */ = {
+			isa = PBXGroup;
+			children = (
+				251E684E2A32445400498F08 /* DrinkDetailViewController.swift */,
+			);
+			path = DrinkDetail;
+			sourceTree = "<group>";
+		};
+		251E68502A324E1000498F08 /* DrinkDetail */ = {
+			isa = PBXGroup;
+			children = (
+				251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */,
+				257C8E5D2A39603C00BCF65C /* DrinkDetailBottomView.swift */,
+				257C8E572A38151300BCF65C /* CustomButton */,
+			);
+			path = DrinkDetail;
+			sourceTree = "<group>";
+		};
+		251E68532A33C09700498F08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E2E2A340A9400BCF65C /* Menu */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		256FC28A2A30E30800355378 = {
 			isa = PBXGroup;
 			children = (
 				256FC2952A30E30800355378 /* OrderDrinkApp */,
 				256FC2942A30E30800355378 /* Products */,
+				E5D30885908FF0505EA71DA8 /* Pods */,
+				FB238D2432FAA43753110827 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +117,10 @@
 		256FC2952A30E30800355378 /* OrderDrinkApp */ = {
 			isa = PBXGroup;
 			children = (
+				256FC2DB2A31B41F00355378 /* Extension */,
+				251E68532A33C09700498F08 /* Model */,
+				256FC2D52A319D7D00355378 /* View */,
+				256FC2AA2A30E3C200355378 /* Controller */,
 				256FC2962A30E30800355378 /* AppDelegate.swift */,
 				256FC2982A30E30800355378 /* SceneDelegate.swift */,
 				256FC29A2A30E30800355378 /* ViewController.swift */,
@@ -67,6 +132,95 @@
 			path = OrderDrinkApp;
 			sourceTree = "<group>";
 		};
+		256FC2AA2A30E3C200355378 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				256FC2AB2A30E40000355378 /* TabBarViewController.swift */,
+				256FC2D92A31A79200355378 /* NavigationController.swift */,
+				256FC2AE2A30E8F900355378 /* Menu */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		256FC2AE2A30E8F900355378 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				256FC2B12A30F18100355378 /* MenuViewController.swift */,
+				251E684D2A32436C00498F08 /* DrinkDetail */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		256FC2D52A319D7D00355378 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				256FC2D62A319D8800355378 /* Menu */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		256FC2D62A319D8800355378 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				256FC2D72A319D9900355378 /* MenuCollectionViewCell.swift */,
+				251E68502A324E1000498F08 /* DrinkDetail */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		256FC2DB2A31B41F00355378 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				256FC2DC2A31B44200355378 /* UIColor+.swift */,
+				251E684A2A31CB1400498F08 /* UIViewController+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		257C8E2E2A340A9400BCF65C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E2F2A340AE800BCF65C /* MenuRequestProvider.swift */,
+				257C8E312A341CE700BCF65C /* MenuDataModel.swift */,
+				257C8E332A341E0F00BCF65C /* MenuFromJson.swift */,
+				257C8E5A2A3817A600BCF65C /* CustomItem */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		257C8E572A38151300BCF65C /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E582A38153300BCF65C /* SelectionButton.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		257C8E5A2A3817A600BCF65C /* CustomItem */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */,
+			);
+			path = CustomItem;
+			sourceTree = "<group>";
+		};
+		E5D30885908FF0505EA71DA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B45877DCEE3A40DC8780D47 /* Pods-OrderDrinkApp.debug.xcconfig */,
+				988E11E5CFC1A2A0A711DB83 /* Pods-OrderDrinkApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB238D2432FAA43753110827 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC7D5519419997990A5F8D59 /* Pods_OrderDrinkApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256FC2A72A30E30A00355378 /* Build configuration list for PBXNativeTarget "OrderDrinkApp" */;
 			buildPhases = (
+				D282599383CCDC68D5D51D3F /* [CP] Check Pods Manifest.lock */,
 				256FC28F2A30E30800355378 /* Sources */,
 				256FC2902A30E30800355378 /* Frameworks */,
 				256FC2912A30E30800355378 /* Resources */,
+				5EC4AA2499771BB17DDCA045 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +289,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EC4AA2499771BB17DDCA045 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D282599383CCDC68D5D51D3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderDrinkApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		256FC28F2A30E30800355378 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257C8E342A341E0F00BCF65C /* MenuFromJson.swift in Sources */,
+				256FC2AC2A30E40000355378 /* TabBarViewController.swift in Sources */,
+				251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */,
+				256FC2DD2A31B44200355378 /* UIColor+.swift in Sources */,
+				256FC2B22A30F18100355378 /* MenuViewController.swift in Sources */,
 				256FC29B2A30E30800355378 /* ViewController.swift in Sources */,
+				251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */,
 				256FC2972A30E30800355378 /* AppDelegate.swift in Sources */,
+				251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */,
 				256FC2992A30E30800355378 /* SceneDelegate.swift in Sources */,
+				257C8E322A341CE700BCF65C /* MenuDataModel.swift in Sources */,
+				257C8E5C2A3817F300BCF65C /* CustomItemModel.swift in Sources */,
+				257C8E592A38153300BCF65C /* SelectionButton.swift in Sources */,
+				257C8E302A340AE800BCF65C /* MenuRequestProvider.swift in Sources */,
+				256FC2DA2A31A79200355378 /* NavigationController.swift in Sources */,
+				257C8E5E2A39603C00BCF65C /* DrinkDetailBottomView.swift in Sources */,
+				256FC2D82A319D9900355378 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +494,7 @@
 		};
 		256FC2A82A30E30A00355378 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B45877DCEE3A40DC8780D47 /* Pods-OrderDrinkApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +505,9 @@
 				INFOPLIST_FILE = OrderDrinkApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +523,7 @@
 		};
 		256FC2A92A30E30A00355378 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988E11E5CFC1A2A0A711DB83 /* Pods-OrderDrinkApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +534,9 @@
 				INFOPLIST_FILE = OrderDrinkApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,6 @@
+framework module Pods_OrderDrinkApp {
+  umbrella header "Pods-OrderDrinkApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
