@@ -17,7 +17,7 @@ class MenuRequestProvider {
             "Accept": "application/json"
         ]
         
-        AF.request(urlStr, method: .get, headers: headers).responseDecodable(of: MenuDataModel.self) { response in
+        AF.request(urlStr, method: .get, headers: headers).responseDecodable(of: Menu.self) { response in
             switch response.result {
             case .success(let data):
                 completion(.success(data.records))

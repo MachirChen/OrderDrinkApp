@@ -14,7 +14,9 @@ extension UIViewController {
     }
     
     @objc private func handleShoppingCart() {
-        
+        let shoppingCartcontroller = ShoppingCartViewController()
+        shoppingCartcontroller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(shoppingCartcontroller, animated: true)
     }
     
 }

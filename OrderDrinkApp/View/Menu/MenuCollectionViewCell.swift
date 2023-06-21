@@ -39,19 +39,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupLayout()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
     }
     
     private func setupView() {
@@ -68,14 +60,15 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(drinkImageView.snp.bottom)
-            make.leading.trailing.equalTo(self)
+            make.top.equalTo(drinkImageView.snp.bottom).offset(8)
+            make.leading.trailing.equalTo(priceLabel)
             make.height.equalTo(25)
         }
         
         priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom)
-            make.leading.trailing.equalTo(self)
+            make.bottom.equalTo(self).offset(-8)
+            make.trailing.equalTo(self).offset(-8)
+            make.leading.equalTo(self).offset(8)
             make.height.equalTo(20)
         }
     }

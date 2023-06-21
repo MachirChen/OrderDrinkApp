@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25121E0D2A40021000D49979 /* NotificationName+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E0C2A40021000D49979 /* NotificationName+.swift */; };
+		25121E122A4024DF00D49979 /* OrderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E112A4024DF00D49979 /* OrderDataModel.swift */; };
+		25121E142A402FBF00D49979 /* OrderRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E132A402FBF00D49979 /* OrderRequestProvider.swift */; };
 		251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684A2A31CB1400498F08 /* UIViewController+.swift */; };
 		251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684E2A32445400498F08 /* DrinkDetailViewController.swift */; };
 		251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */; };
@@ -27,10 +30,15 @@
 		257C8E592A38153300BCF65C /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E582A38153300BCF65C /* SelectionButton.swift */; };
 		257C8E5C2A3817F300BCF65C /* CustomItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */; };
 		257C8E5E2A39603C00BCF65C /* DrinkDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E5D2A39603C00BCF65C /* DrinkDetailBottomView.swift */; };
+		257C8E662A3C59B300BCF65C /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E652A3C59B300BCF65C /* ShoppingCartViewController.swift */; };
+		257C8E692A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8E682A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift */; };
 		FDFCF1D733C7E69C7E59AF80 /* Pods_OrderDrinkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7D5519419997990A5F8D59 /* Pods_OrderDrinkApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25121E0C2A40021000D49979 /* NotificationName+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+.swift"; sourceTree = "<group>"; };
+		25121E112A4024DF00D49979 /* OrderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataModel.swift; sourceTree = "<group>"; };
+		25121E132A402FBF00D49979 /* OrderRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestProvider.swift; sourceTree = "<group>"; };
 		251E684A2A31CB1400498F08 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		251E684E2A32445400498F08 /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
 		251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 		257C8E582A38153300BCF65C /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
 		257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemModel.swift; sourceTree = "<group>"; };
 		257C8E5D2A39603C00BCF65C /* DrinkDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailBottomView.swift; sourceTree = "<group>"; };
+		257C8E652A3C59B300BCF65C /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		257C8E682A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B45877DCEE3A40DC8780D47 /* Pods-OrderDrinkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderDrinkApp.debug.xcconfig"; path = "Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		988E11E5CFC1A2A0A711DB83 /* Pods-OrderDrinkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderDrinkApp.release.xcconfig"; path = "Target Support Files/Pods-OrderDrinkApp/Pods-OrderDrinkApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC7D5519419997990A5F8D59 /* Pods_OrderDrinkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderDrinkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25121E0E2A40245600D49979 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				25121E132A402FBF00D49979 /* OrderRequestProvider.swift */,
+				25121E112A4024DF00D49979 /* OrderDataModel.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		251E684D2A32436C00498F08 /* DrinkDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				257C8E2E2A340A9400BCF65C /* Menu */,
+				25121E0E2A40245600D49979 /* Order */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +158,7 @@
 				256FC2AB2A30E40000355378 /* TabBarViewController.swift */,
 				256FC2D92A31A79200355378 /* NavigationController.swift */,
 				256FC2AE2A30E8F900355378 /* Menu */,
+				257C8E642A3C589600BCF65C /* ShoppingCart */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				256FC2D62A319D8800355378 /* Menu */,
+				257C8E672A3CB46600BCF65C /* ShoppingCart */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 			children = (
 				256FC2DC2A31B44200355378 /* UIColor+.swift */,
 				251E684A2A31CB1400498F08 /* UIViewController+.swift */,
+				25121E0C2A40021000D49979 /* NotificationName+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -202,6 +225,22 @@
 				257C8E5B2A3817F300BCF65C /* CustomItemModel.swift */,
 			);
 			path = CustomItem;
+			sourceTree = "<group>";
+		};
+		257C8E642A3C589600BCF65C /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E652A3C59B300BCF65C /* ShoppingCartViewController.swift */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		257C8E672A3CB46600BCF65C /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				257C8E682A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift */,
+			);
+			path = ShoppingCart;
 			sourceTree = "<group>";
 		};
 		E5D30885908FF0505EA71DA8 /* Pods */ = {
@@ -338,11 +377,15 @@
 			files = (
 				257C8E342A341E0F00BCF65C /* MenuFromJson.swift in Sources */,
 				256FC2AC2A30E40000355378 /* TabBarViewController.swift in Sources */,
+				25121E122A4024DF00D49979 /* OrderDataModel.swift in Sources */,
+				257C8E662A3C59B300BCF65C /* ShoppingCartViewController.swift in Sources */,
+				257C8E692A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift in Sources */,
 				251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */,
 				256FC2DD2A31B44200355378 /* UIColor+.swift in Sources */,
 				256FC2B22A30F18100355378 /* MenuViewController.swift in Sources */,
 				256FC29B2A30E30800355378 /* ViewController.swift in Sources */,
 				251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */,
+				25121E0D2A40021000D49979 /* NotificationName+.swift in Sources */,
 				256FC2972A30E30800355378 /* AppDelegate.swift in Sources */,
 				251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */,
 				256FC2992A30E30800355378 /* SceneDelegate.swift in Sources */,
@@ -351,6 +394,7 @@
 				257C8E592A38153300BCF65C /* SelectionButton.swift in Sources */,
 				257C8E302A340AE800BCF65C /* MenuRequestProvider.swift in Sources */,
 				256FC2DA2A31A79200355378 /* NavigationController.swift in Sources */,
+				25121E142A402FBF00D49979 /* OrderRequestProvider.swift in Sources */,
 				257C8E5E2A39603C00BCF65C /* DrinkDetailBottomView.swift in Sources */,
 				256FC2D82A319D9900355378 /* MenuCollectionViewCell.swift in Sources */,
 			);

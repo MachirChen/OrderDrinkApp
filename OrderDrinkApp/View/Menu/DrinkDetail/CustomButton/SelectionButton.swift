@@ -7,7 +7,13 @@
 
 import UIKit
 
-class selectionButton: UIButton {
+//protocol SelectionButtonDelegate {
+//    func
+//}
+
+class SelectionButton: UIButton {
+    
+//    weak var delegate: SelectionButtonDelegate?
     
     enum ButtonStyle {
         case roundedView
@@ -25,19 +31,22 @@ class selectionButton: UIButton {
         view.layer.borderWidth = 2.0
         view.layer.masksToBounds = true
         view.layer.borderColor = UIColor.kebukeBlue.cgColor
+        view.isUserInteractionEnabled = false
         return view
     }()
     
     let title: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = false
         return label
     }()
     
     let priceTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .right
+        label.textAlignment = .left
+        label.isUserInteractionEnabled = false
         return label
     }()
     
@@ -92,17 +101,17 @@ class selectionButton: UIButton {
             title.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             priceTitle.topAnchor.constraint(equalTo: topAnchor),
-            priceTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8.0),
-            priceTitle.widthAnchor.constraint(equalTo: title.widthAnchor, multiplier: 0.3),
+            priceTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
+            priceTitle.widthAnchor.constraint(equalTo: title.widthAnchor, multiplier: 0.20),
             priceTitle.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapped))
-        addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapped))
+//        addGestureRecognizer(tapGesture)
         
     }
-    
-    private func updateSelectionState() {
+        
+    func updateSelectionState() {
         selectionStateView.backgroundColor = isChecked ? .kebukeBlue : .clear
         
         if isChecked {
@@ -130,13 +139,7 @@ class selectionButton: UIButton {
         isChecked = !isChecked
     }
     
-//    func setTitle(_ title: String?, priceTitle: String?, buttonStyle: selectionButton.ButtonStyle, for state: UIControl.State) {
-//        self.title.text = title
-//        self.priceTitle.text = priceTitle
-//        self.buttonStyle = buttonStyle
-//    }
-    
-    func setTitle(_ title: String?, priceTitle: String?, buttonStyle: selectionButton.ButtonStyle) {
+    func setTitle(_ title: String?, priceTitle: String?, buttonStyle: SelectionButton.ButtonStyle) {
         self.title.text = title
         self.priceTitle.text = priceTitle
         self.buttonStyle = buttonStyle

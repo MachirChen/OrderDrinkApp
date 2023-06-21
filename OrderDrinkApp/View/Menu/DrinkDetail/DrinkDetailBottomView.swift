@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 protocol DrinkDetailBottomViewDelegate: AnyObject {
-    func didTapOrderButton(_ view: DrinkDetailBottomView)
-    func didTapMinusButton(_ view: DrinkDetailBottomView)
-    func didTapPlusButton(_ view: DrinkDetailBottomView)
+    func didTapOrderButton()
+    func didTapMinusButton(minusButton: UIButton, plusButton: UIButton, quantityLabel: UILabel)
+    func didTapPlusButton(plusButton: UIButton, minusButton: UIButton, quantityLabel: UILabel)
 }
 
 class DrinkDetailBottomView: UIView {
@@ -24,14 +24,14 @@ class DrinkDetailBottomView: UIView {
         return view
     }()
     
-    private let orderButton: UIButton = {
+    let orderButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("加入購物車", for: .normal)
-        button.backgroundColor = .kebukeYellow
+        button.backgroundColor = .gray
         button.tintColor = .kebukeBlue
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
-        
+        button.isEnabled = false
         return button
     }()
     
@@ -40,6 +40,7 @@ class DrinkDetailBottomView: UIView {
         button.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
         button.backgroundColor = .clear
         button.tintColor = .kebukeYellow
+        button.isEnabled = false
         return button
     }()
     
@@ -98,17 +99,20 @@ class DrinkDetailBottomView: UIView {
     
     private func setupButtonActions() {
         orderButton.addTarget(self, action: #selector(tapOrderButton), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(tapPlusButton), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(tapMinusButton), for: .touchUpInside)
     }
     
     @objc private func tapOrderButton() {
-        delegate?.didTapOrderButton(self)
+        delegate?.didTapOrderButton()
     }
 
     @objc private func tapPlusButton() {
-        delegate?.didTapPlusButton(self)
+        delegate?.didTapPlusButton(plusButton: plusButton, minusButton: minusButton, quantityLabel: quantityLabel)
     }
     
-    @objc private func tapMinusButton() {
-        delegate?.didTapMinusButton(self)
+    @objc private func tapMinusButton(_ sender: UIButton) {
+        delegate?.didTapMinusButton(minusButton: minusButton, plusButton: plusButton, quantityLabel: quantityLabel)
     }
+    
 }

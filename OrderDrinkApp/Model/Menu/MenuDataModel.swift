@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MenuDataModel: Codable {
+struct Menu: Codable {
     var records: [Record]
 }
 
