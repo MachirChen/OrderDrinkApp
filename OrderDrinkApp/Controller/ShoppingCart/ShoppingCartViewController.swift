@@ -11,13 +11,33 @@ class ShoppingCartViewController: UIViewController {
     
     var orderList:[OrderResponse.Record] = []
     
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var collectionView: UICollectionView!
+    
+//    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         fetchData()
         navigationItem.title = "購物車"
+    }
+    
+    private func generateLayout() -> UICollectionViewLayout {
+        var listConfiguration = UICollectionLayoutListConfiguration(appearance: .plain)
+        listConfiguration.backgroundColor = .kebukeBlue
+        listConfiguration.trailingSwipeActionsConfigurationProvider = {
+            [weak self] indexPath in guard let self = self else { return UISwipeActionsConfiguration() }
+            
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+                let order = self.orderList[indexPath.row]
+                self.orderList.remove(at: indexPath.row)
+                self.collectionView.deleteItems(at: [indexPath])
+                OrderRequestProvider.shared.deleteOrder(id: order.id)
+            }
+            return UISwipeActionsConfiguration(actions: [deleteAction])
+        }
+        return UICollectionViewCompositionalLayout.list(using: listConfiguration)
+        
     }
     
     private func fetchData() {
@@ -33,12 +53,14 @@ class ShoppingCartViewController: UIViewController {
     }
     
     private func setupCollectionView() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         collectionView.alwaysBounceVertical = true
         collectionView.register(ShoppingCartCollectionViewCell.self, forCellWithReuseIdentifier: ShoppingCartCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.frame = view.bounds
         collectionView.backgroundColor = .kebukeBlue
+
         view.addSubview(collectionView)
     }
 }
@@ -77,6 +99,11 @@ extension ShoppingCartViewController: UICollectionViewDelegate {
 //        navigationController?.pushViewController(drinkDetailVC, animated: true)
         print(indexPath)
     }
+    
+//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+//        <#code#>
+//    }
+    
     
 }
 

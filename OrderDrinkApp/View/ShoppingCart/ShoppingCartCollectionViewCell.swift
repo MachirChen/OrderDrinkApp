@@ -111,15 +111,17 @@ class ShoppingCartCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(drinkNameLabel)
         contentView.addSubview(drinkCustomLabel)
         contentView.addSubview(drinkPriceLabel)
+        
         drinkImageView.snp.makeConstraints { make in
             make.width.height.equalTo(80)
-            make.leading.top.equalTo(self).offset(20)
+            make.leading.equalTo(contentView.snp.leading).offset(20)
+            make.top.equalTo(contentView.snp.top).offset(20)
         }
         
         drinkNameLabel.snp.makeConstraints { make in
             make.top.equalTo(drinkImageView.snp.top)
             make.leading.equalTo(drinkImageView.snp.trailing).offset(10)
-            make.trailing.equalTo(self).offset(-10)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-10)
             make.height.equalTo(22)
         }
         
@@ -139,6 +141,7 @@ class ShoppingCartCollectionViewCell: UICollectionViewCell {
             make.centerY.equalTo(drinkPriceLabel)
             make.trailing.equalTo(drinkNameLabel)
             make.width.equalTo(100)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
     }
     

@@ -7,13 +7,7 @@
 
 import UIKit
 
-//protocol SelectionButtonDelegate {
-//    func
-//}
-
 class SelectionButton: UIButton {
-    
-//    weak var delegate: SelectionButtonDelegate?
     
     enum ButtonStyle {
         case roundedView

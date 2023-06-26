@@ -10,27 +10,20 @@ import SnapKit
 
 protocol DrinkDetailBottomViewDelegate: AnyObject {
     func didTapOrderButton()
-    func didTapMinusButton(minusButton: UIButton, plusButton: UIButton, quantityLabel: UILabel)
-    func didTapPlusButton(plusButton: UIButton, minusButton: UIButton, quantityLabel: UILabel)
+    func didTapMinusButton()
+    func didTapPlusButton()
 }
 
 class DrinkDetailBottomView: UIView {
     
     weak var delegate: DrinkDetailBottomViewDelegate?
     
-    private let bottomControlView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .kebukeBlue
-        return view
-    }()
-    
     let orderButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("加入購物車", for: .normal)
         button.backgroundColor = .gray
         button.tintColor = .kebukeBlue
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
+        button.cornerRadii(radii: 5)
         button.isEnabled = false
         return button
     }()
@@ -70,27 +63,39 @@ class DrinkDetailBottomView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func updateQuantityLabel(with value: Int) {
+        quantityLabel.text = "\(value)"
+    }
+    
+    public func updateMinusButtonAvailability(enabled: Bool) {
+        minusButton.isEnabled = enabled
+    }
+
+    public func enableOrderButton() {
+        orderButton.isEnabled = true
+        orderButton.backgroundColor = .kebukeYellow
+    }
+    
+    
     private func setupView() {
-        addSubview(bottomControlView)
-        addSubview(orderButton)
+        
         let stackView = UIStackView(arrangedSubviews: [minusButton, quantityLabel, plusButton])
         stackView.axis = .horizontal
+        stackView.alignment = .center
         stackView.distribution = .equalCentering
         addSubview(stackView)
+        addSubview(orderButton)
+        self.backgroundColor = .kebukeBlue
         
         stackView.snp.makeConstraints { make in
             make.centerY.equalTo(orderButton)
-            make.leading.equalTo(bottomControlView).offset(20)
+            make.leading.equalTo(self).offset(20)
             make.trailing.equalTo(orderButton.snp.leading).offset(-20)
         }
         
-        bottomControlView.snp.makeConstraints { make in
-            make.trailing.leading.top.bottom.equalTo(self)
-        }
-        
         orderButton.snp.makeConstraints { make in
-            make.trailing.equalTo(bottomControlView).offset(-20)
-            make.top.equalTo(bottomControlView).offset(10)
+            make.trailing.equalTo(self).offset(-20)
+            make.top.equalTo(self).offset(10)
             make.width.equalTo(250)
             make.height.equalTo(40)
         }
@@ -108,11 +113,11 @@ class DrinkDetailBottomView: UIView {
     }
 
     @objc private func tapPlusButton() {
-        delegate?.didTapPlusButton(plusButton: plusButton, minusButton: minusButton, quantityLabel: quantityLabel)
+        delegate?.didTapPlusButton()
     }
     
-    @objc private func tapMinusButton(_ sender: UIButton) {
-        delegate?.didTapMinusButton(minusButton: minusButton, plusButton: plusButton, quantityLabel: quantityLabel)
+    @objc private func tapMinusButton() {
+        delegate?.didTapMinusButton()
     }
     
 }

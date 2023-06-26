@@ -48,40 +48,39 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
     private let subtiltleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = .darkGray
         label.text = "subtiltle"
         return label
     }()
     
     private var sweetnessButtons: [SelectionButton] = []
-    private var iceButtons: [SelectionButton] = []
+    private var temperatureButtons: [SelectionButton] = []
     private var sizeButtons: [SelectionButton] = []
     private var toppingButtons: [SelectionButton] = []
 
-    private let sweetnessLevelBackgroundView = UIView()
-    private let iceLevelBackgroundView = UIView()
-    private let capacitySizeBackgroundView = UIView()
-    private let toppingsBackgroundView = UIView()
+    private let sweetnessBackgroundView = UIView()
+    private let temperatureBackgroundView = UIView()
+    private let sizeBackgroundView = UIView()
+    private let toppingBackgroundView = UIView()
     
     private var sweetnessTitleLabel: UILabel!
-    private var iceTitleLabel: UILabel!
-    private var capacitySizeTitleLabel: UILabel!
-    private var toppingsTitleLabel: UILabel!
+    private var temperatureTitleLabel: UILabel!
+    private var sizeTitleLabel: UILabel!
+    private var toppingTitleLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupGrayBackgroundView(view: capacitySizeBackgroundView, backgroundColor: .alertRed)
-        setupGrayBackgroundView(view: sweetnessLevelBackgroundView, backgroundColor: .alertRed)
-        setupGrayBackgroundView(view: iceLevelBackgroundView, backgroundColor: .alertRed)
-        setupGrayBackgroundView(view: toppingsBackgroundView, backgroundColor: .systemGray5)
+        setupBackgroundView(view: sizeBackgroundView, backgroundColor: .alertRed)
+        setupBackgroundView(view: sweetnessBackgroundView, backgroundColor: .alertRed)
+        setupBackgroundView(view: temperatureBackgroundView, backgroundColor: .alertRed)
+        setupBackgroundView(view: toppingBackgroundView, backgroundColor: .systemGray5)
         
         setupView()
-        backgroundColor = .green
         
-        capacitySizeTitleLabel = createTitleLabel(text: "容量選擇")
+        sizeTitleLabel = createTitleLabel(text: "容量選擇")
         sweetnessTitleLabel = createTitleLabel(text: "甜度選擇")
-        iceTitleLabel = createTitleLabel(text: "冰量選擇")
-        toppingsTitleLabel = createTitleLabel(text: "加料選擇")
+        temperatureTitleLabel = createTitleLabel(text: "冰量選擇")
+        toppingTitleLabel = createTitleLabel(text: "加料選擇")
         
     }
     
@@ -89,47 +88,45 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func getToppingBackgroundViewMaxY() -> CGFloat {
+        layoutIfNeeded()
+        return toppingBackgroundView.frame.maxY
+    }
+    
     func layoutCell(drinkInfo: Record, size: [Item], temperature: [Item], sweetness: [Item], toppings: [Item]) {
         let drinkInfo = drinkInfo.fields
         self.nameLabel.text = drinkInfo.name
         self.priceLabel.text = "$\(drinkInfo.medium)"
         self.subtiltleLabel.text = drinkInfo.description
-        
-        let imageURL = URL(string: drinkInfo.image[0].url)
-        self.drinkImageView.kf.indicatorType = .activity
-        self.drinkImageView.kf.setImage(with: imageURL)
-
+        drinkImageView.fetchImage(url: drinkInfo.image[0].url)
         sizeButtons = createButtons(items: size, style: .circleView, action: #selector(handleSizeButton))
-        iceButtons = createButtons(items: temperature, style: .circleView, action: #selector(handleIceButton))
+        temperatureButtons = createButtons(items: temperature, style: .circleView, action: #selector(handleIceButton))
         sweetnessButtons = createButtons(items: sweetness, style: .circleView, action: #selector(handleSweetnessButton))
         toppingButtons = createButtons(items: toppings, style: .roundedView, action: #selector(handleToppingButton))
         setupLayout()
     }
     
     @objc private func handleSizeButton(_ sender: SelectionButton) {
-        delegate?.didTapSizeButton(sender, buttons: sizeButtons, background: capacitySizeBackgroundView)
-        print(toppingsBackgroundView.frame.origin)
-        print(toppingsBackgroundView.frame.maxY)
+        delegate?.didTapSizeButton(sender, buttons: sizeButtons, background: sizeBackgroundView)
     }
     
     @objc private func handleIceButton(_ sender: SelectionButton) {
-        delegate?.didTapIceButton(sender, buttons: iceButtons, background: iceLevelBackgroundView)
+        delegate?.didTapIceButton(sender, buttons: temperatureButtons, background: temperatureBackgroundView)
     }
     
     @objc private func handleSweetnessButton(_ sender: SelectionButton) {
-        delegate?.didTapSweetnessButton(sender, buttons: sweetnessButtons, background: sweetnessLevelBackgroundView)
+        delegate?.didTapSweetnessButton(sender, buttons: sweetnessButtons, background: sweetnessBackgroundView)
     }
     
     @objc private func handleToppingButton(_ sender: SelectionButton) {
-        delegate?.didTapToppingButton(sender, buttons: toppingButtons, background: toppingsBackgroundView)
+        delegate?.didTapToppingButton(sender, buttons: toppingButtons, background: toppingBackgroundView)
     }
     
     private func createButtons(items: [Item], style: SelectionButton.ButtonStyle, action: Selector) -> [SelectionButton] {
         var buttons: [SelectionButton] = []
-        for (index, item) in items.enumerated() {
+        for item in items {
             let button = SelectionButton()
             button.setTitle(item.name, priceTitle: item.price, buttonStyle: style)
-            button.tag = index
             button.addTarget(self, action: action, for: .touchUpInside)
             button.snp.makeConstraints { make in
                 make.height.equalTo(20)
@@ -138,14 +135,12 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
             button.priceTitle.font = .systemFont(ofSize: 16)
             buttons.append(button)
         }
-        
         return buttons
     }
     
-    private func setupGrayBackgroundView(view: UIView, backgroundColor: UIColor) {
+    private func setupBackgroundView(view: UIView, backgroundColor: UIColor) {
         view.backgroundColor = backgroundColor
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
+        view.cornerRadii(radii: 10)
         contentView.addSubview(view)
     }
     
@@ -163,12 +158,13 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(subtiltleLabel)
+        backgroundColor = .kebukeYellow
     }
     
     private func setupLayout() {
-        setupCapacitySizeLayout()
-        setupIceLevelLayout()
-        setupSweetnessLevelLayout()
+        setupSizeLayout()
+        setupTemperatureLayout()
+        setupSweetnessLayout()
         setupToppingsLayout()
         
         drinkImageView.snp.makeConstraints { make in
@@ -199,7 +195,7 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func setupCapacitySizeLayout() {
+    private func setupSizeLayout() {
         
         let stackView =  UIStackView(arrangedSubviews: sizeButtons)
         stackView.axis = .vertical
@@ -207,7 +203,7 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 20
         contentView.addSubview(stackView)
         
-        capacitySizeBackgroundView.snp.makeConstraints { make in
+        sizeBackgroundView.snp.makeConstraints { make in
             make.top.equalTo(subtiltleLabel.snp.bottom).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.leading.equalTo(self).offset(20)
@@ -215,49 +211,49 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(capacitySizeTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(sizeTitleLabel.snp.bottom).offset(20)
             make.leading.equalTo(self)
             make.trailing.equalTo(self)
         }
         
-        capacitySizeTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(capacitySizeBackgroundView.snp.top).offset(10)
-            make.leading.equalTo(capacitySizeBackgroundView).offset(20)
-            make.trailing.equalTo(capacitySizeBackgroundView).offset(-30)
+        sizeTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(sizeBackgroundView.snp.top).offset(10)
+            make.leading.equalTo(sizeBackgroundView).offset(20)
+            make.trailing.equalTo(sizeBackgroundView).offset(-30)
             make.height.equalTo(30)
         }
     }
     
-    private func setupIceLevelLayout() {
+    private func setupTemperatureLayout() {
         
-        let stackView =  UIStackView(arrangedSubviews: iceButtons)
+        let stackView =  UIStackView(arrangedSubviews: temperatureButtons)
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.spacing = 20
         contentView.addSubview(stackView)
         
-        iceLevelBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(sweetnessLevelBackgroundView.snp.bottom).offset(20)
+        temperatureBackgroundView.snp.makeConstraints { make in
+            make.top.equalTo(sweetnessBackgroundView.snp.bottom).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.leading.equalTo(self).offset(20)
             make.bottom.equalTo(stackView.snp.bottom).offset(30)
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(iceTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(temperatureTitleLabel.snp.bottom).offset(20)
             make.leading.equalTo(self)
             make.trailing.equalTo(self)
         }
         
-        iceTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(iceLevelBackgroundView.snp.top).offset(10)
-            make.leading.equalTo(iceLevelBackgroundView).offset(20)
-            make.trailing.equalTo(iceLevelBackgroundView).offset(-30)
+        temperatureTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(temperatureBackgroundView.snp.top).offset(10)
+            make.leading.equalTo(temperatureBackgroundView).offset(20)
+            make.trailing.equalTo(temperatureBackgroundView).offset(-30)
             make.height.equalTo(30)
         }
     }
     
-    private func setupSweetnessLevelLayout() {
+    private func setupSweetnessLayout() {
         
         let stackView =  UIStackView(arrangedSubviews: sweetnessButtons)
         stackView.axis = .vertical
@@ -265,8 +261,8 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 20
         contentView.addSubview(stackView)
         
-        sweetnessLevelBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(capacitySizeBackgroundView.snp.bottom).offset(20)
+        sweetnessBackgroundView.snp.makeConstraints { make in
+            make.top.equalTo(sizeBackgroundView.snp.bottom).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.leading.equalTo(self).offset(20)
             make.bottom.equalTo(stackView.snp.bottom).offset(30)
@@ -279,9 +275,9 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         }
         
         sweetnessTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(sweetnessLevelBackgroundView.snp.top).offset(10)
-            make.leading.equalTo(sweetnessLevelBackgroundView).offset(20)
-            make.trailing.equalTo(sweetnessLevelBackgroundView).offset(-30)
+            make.top.equalTo(sweetnessBackgroundView.snp.top).offset(10)
+            make.leading.equalTo(sweetnessBackgroundView).offset(20)
+            make.trailing.equalTo(sweetnessBackgroundView).offset(-30)
             make.height.equalTo(30)
         }
     }
@@ -294,23 +290,23 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 20
         contentView.addSubview(stackView)
         
-        toppingsBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(iceLevelBackgroundView.snp.bottom).offset(20)
+        toppingBackgroundView.snp.makeConstraints { make in
+            make.top.equalTo(temperatureBackgroundView.snp.bottom).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.leading.equalTo(self).offset(20)
             make.bottom.equalTo(stackView.snp.bottom).offset(30)
         }
 
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(toppingsTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(toppingTitleLabel.snp.bottom).offset(20)
             make.leading.equalTo(self)
             make.trailing.equalTo(self)
         }
         
-        toppingsTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(toppingsBackgroundView.snp.top).offset(10)
-            make.leading.equalTo(toppingsBackgroundView).offset(20)
-            make.trailing.equalTo(toppingsBackgroundView).offset(-30)
+        toppingTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(toppingBackgroundView.snp.top).offset(10)
+            make.leading.equalTo(toppingBackgroundView).offset(20)
+            make.trailing.equalTo(toppingBackgroundView).offset(-30)
             make.height.equalTo(30)
         }
         

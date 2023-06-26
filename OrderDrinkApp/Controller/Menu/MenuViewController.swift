@@ -7,19 +7,26 @@
 
 import UIKit
 
-
 class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
-
+    
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let searchController = UISearchController(searchResultsController: nil)
-    var menu: [Record] = []
+    private let navShoppingCartButton = ShoppingCartButton(type: .custom)
+    private var menu: [Record] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         setupCollectionView()
-        setupShoppingCartButtonInNavBar()
+        setupNavigationBar()
         setupSearchController()
         fetchData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        updateShoppingCartButtonAppearance()
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,6 +65,35 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         collectionView.delegate = self
         collectionView.backgroundColor = .kebukeBlue
         view.addSubview(collectionView)
+    }
+    
+    private func setupNavigationBar() {
+        navShoppingCartButton.setImage(UIImage(systemName: "cart"), for: .normal)
+        navShoppingCartButton.addTarget(self, action: #selector(handleShoppingCart), for: .touchUpInside)
+
+        let cartBarButton = UIBarButtonItem(customView: navShoppingCartButton)
+        navigationItem.rightBarButtonItem = cartBarButton
+    }
+    
+    @objc private func handleShoppingCart() {
+        let shoppingCartcontroller = ShoppingCartViewController()
+        shoppingCartcontroller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(shoppingCartcontroller, animated: true)
+    }
+    
+    private func updateShoppingCartButtonAppearance() {
+        OrderRequestProvider.shared.fetchOrderData { result in
+            switch result {
+            case .success(let orderList):
+                if orderList.isEmpty {
+                    self.navShoppingCartButton.unpaidLightView.backgroundColor = nil
+                } else {
+                    self.navShoppingCartButton.unpaidLightView.backgroundColor = .systemRed
+                }
+            case .failure(let error):
+                print("Failed to fetch order list:", error)
+            }
+        }
     }
 
 }
@@ -113,3 +149,4 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+

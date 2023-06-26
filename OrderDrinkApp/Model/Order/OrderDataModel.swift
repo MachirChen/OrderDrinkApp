@@ -15,12 +15,12 @@ struct Order: Encodable {
     }
     
     struct Field: Encodable {
-        let drink: String
-        let temperature: String
-        let sweetness: String
-        let toppings: String?
-        let quantity: Int
-        let price: Int
+        var drink: String
+        var temperature: String
+        var sweetness: String
+        var toppings: String?
+        var quantity: Int
+        var price: Int
         let image: [Image]
     }
     
