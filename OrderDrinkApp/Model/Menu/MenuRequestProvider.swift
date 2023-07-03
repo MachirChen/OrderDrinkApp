@@ -9,11 +9,12 @@ import Alamofire
 
 class MenuRequestProvider {
     static let shared = MenuRequestProvider()
+    private let apiKey = "keyGfh2XBwXYxG68d"
     
     func fetchMenu(completion: @escaping (Result<[Record], Error>) -> Void) {
         let urlStr = "https://api.airtable.com/v0/appgfDIC0LO9O3n4q/Menu"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer keyGfh2XBwXYxG68d",
+            "Authorization": "Bearer \(apiKey)",
             "Accept": "application/json"
         ]
         

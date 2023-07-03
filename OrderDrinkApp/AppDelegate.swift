@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,34 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                // Show the app's signed-out state.
+            } else {
+                // Show the app's signed-in state.
+                print("有使用者")
+            }
+        }
         
-//        UINavigationBar.appearance().tintColor = .white
-//        UINavigationBar.appearance().prefersLargeTitles = true
-//        UINavigationBar.appearance().barTintColor = .red
-//
-//        if #available(iOS 13.0, *) {
-//            let appearance = UINavigationBarAppearance()
-//            UINavigationBar.appearance().tintColor = .white
-//            appearance.backgroundColor = .red
-//            appearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white] //portrait title
-//            appearance.titleTextAttributes = [.foregroundColor : UIColor.white] //landscape title
-//
-//            UINavigationBar.appearance().tintColor = .white
-//            UINavigationBar.appearance().standardAppearance = appearance //landscape
-//            UINavigationBar.appearance().compactAppearance = appearance
-//            UINavigationBar.appearance().scrollEdgeAppearance = appearance //portrait
-//        } else {
-//
-//            UINavigationBar.appearance().isTranslucent = false
-//            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-//            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//        }
-//
-//        if #available(iOS 15.0, *) {
-//            UITableView.appearance().sectionHeaderTopPadding = 0.0
-//        }
-        
+        FirebaseApp.configure()
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -56,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
 
 }

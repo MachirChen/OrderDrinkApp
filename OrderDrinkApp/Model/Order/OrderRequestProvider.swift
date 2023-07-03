@@ -10,11 +10,12 @@ import Alamofire
 
 class OrderRequestProvider {
     static let shared = OrderRequestProvider()
+    private let apiKey = "keyGfh2XBwXYxG68d"
     
     func uploadDrink(data: Order) {
         let urlStr = "https://api.airtable.com/v0/appgfDIC0LO9O3n4q/OrderList"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer keyGfh2XBwXYxG68d",
+            "Authorization": "Bearer \(apiKey)",
             "Accept": "application/json"
         ]
         
@@ -26,7 +27,7 @@ class OrderRequestProvider {
     func fetchOrderData(completion: @escaping (Result<[OrderResponse.Record], Error>) -> Void) {
         let urlStr = "https://api.airtable.com/v0/appgfDIC0LO9O3n4q/OrderList"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer keyGfh2XBwXYxG68d",
+            "Authorization": "Bearer \(apiKey)",
             "Accept": "application/json"
         ]
 
@@ -45,7 +46,7 @@ class OrderRequestProvider {
     func deleteOrder(id: String) {
         let urlStr = "https://api.airtable.com/v0/appgfDIC0LO9O3n4q/OrderList/\(id)"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer keyGfh2XBwXYxG68d"
+            "Authorization": "Bearer \(apiKey)"
         ]
 
         AF.request(urlStr, method: .delete, headers: headers).response { response in
@@ -56,7 +57,7 @@ class OrderRequestProvider {
     func updateOrder(data: OrderResponse) {
         let urlStr = "https://api.airtable.com/v0/appgfDIC0LO9O3n4q/OrderList"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer keyGfh2XBwXYxG68d",
+            "Authorization": "Bearer \(apiKey)",
             "Accept": "application/json"
         ]
         

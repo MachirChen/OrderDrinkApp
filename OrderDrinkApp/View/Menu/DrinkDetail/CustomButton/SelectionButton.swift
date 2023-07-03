@@ -29,14 +29,14 @@ class SelectionButton: UIButton {
         return view
     }()
     
-    let title: UILabel = {
+    public let title: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         return label
     }()
     
-    let priceTitle: UILabel = {
+    public let priceTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -52,7 +52,7 @@ class SelectionButton: UIButton {
         return layer
     }()
     
-    var isChecked: Bool = false {
+    public var isChecked: Bool = false {
         didSet {
             updateSelectionState()
         }
@@ -60,7 +60,6 @@ class SelectionButton: UIButton {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
         if buttonStyle == .circleView {
             selectionStateView.layer.cornerRadius = selectionStateView.frame.height / 2
         } else {
@@ -105,7 +104,7 @@ class SelectionButton: UIButton {
         
     }
         
-    func updateSelectionState() {
+    private func updateSelectionState() {
         selectionStateView.backgroundColor = isChecked ? .kebukeBlue : .clear
         
         if isChecked {
@@ -133,7 +132,7 @@ class SelectionButton: UIButton {
         isChecked = !isChecked
     }
     
-    func setTitle(_ title: String?, priceTitle: String?, buttonStyle: SelectionButton.ButtonStyle) {
+    public func setTitle(_ title: String?, priceTitle: String?, buttonStyle: SelectionButton.ButtonStyle) {
         self.title.text = title
         self.priceTitle.text = priceTitle
         self.buttonStyle = buttonStyle

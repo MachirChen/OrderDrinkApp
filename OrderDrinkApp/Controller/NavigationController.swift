@@ -30,26 +30,14 @@ class NavigationController: UINavigationController {
                     UINavigationBar.appearance().compactAppearance = appearance
                     UINavigationBar.appearance().scrollEdgeAppearance = appearance //portrait
                 } else {
-        
                     UINavigationBar.appearance().isTranslucent = false
                     UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
                     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 }
-        
         }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

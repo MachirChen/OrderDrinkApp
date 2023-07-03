@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25121E0D2A40021000D49979 /* NotificationName+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E0C2A40021000D49979 /* NotificationName+.swift */; };
 		25121E122A4024DF00D49979 /* OrderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E112A4024DF00D49979 /* OrderDataModel.swift */; };
 		25121E142A402FBF00D49979 /* OrderRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E132A402FBF00D49979 /* OrderRequestProvider.swift */; };
 		25121E182A42DDA600D49979 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E172A42DDA600D49979 /* UIView+.swift */; };
 		25121E1C2A42E4E600D49979 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E1B2A42E4E600D49979 /* UIImageView+.swift */; };
 		25121E442A48129D00D49979 /* ShoppingCartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E432A48129D00D49979 /* ShoppingCartButton.swift */; };
-		251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684A2A31CB1400498F08 /* UIViewController+.swift */; };
+		25121E542A49736D00D49979 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E532A49736D00D49979 /* ProfileViewController.swift */; };
+		25121E572A49997C00D49979 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E562A49997C00D49979 /* ProfileCollectionViewCell.swift */; };
+		25121E592A49F03100D49979 /* ProfileTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E582A49F03100D49979 /* ProfileTopView.swift */; };
+		25121E5C2A4A065300D49979 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E5B2A4A065300D49979 /* WelcomeView.swift */; };
+		25121E5F2A4A0A7200D49979 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E5E2A4A0A7200D49979 /* WelcomeViewController.swift */; };
+		25121E622A4A886C00D49979 /* UserRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E612A4A886C00D49979 /* UserRequestProvider.swift */; };
+		25121E642A4A8D5200D49979 /* SignUpAndInAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E632A4A8D5200D49979 /* SignUpAndInAccountView.swift */; };
+		25121E662A4A8DED00D49979 /* SignUpAndInAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E652A4A8DED00D49979 /* SignUpAndInAccountViewController.swift */; };
+		25121E6A2A4AB06700D49979 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E692A4AB06700D49979 /* FirebaseAnalytics */; };
+		25121E6C2A4AB06700D49979 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E6B2A4AB06700D49979 /* FirebaseAuth */; };
+		25121E6E2A4AB06700D49979 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E6D2A4AB06700D49979 /* FirebaseFirestoreSwift */; };
+		25121E702A4AB06700D49979 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E6F2A4AB06700D49979 /* FirebaseStorage */; };
+		25121E762A4AB5B500D49979 /* FirebaseAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E752A4AB5B500D49979 /* FirebaseAuthUI */; };
+		25121E782A4AB5B500D49979 /* FirebaseGoogleAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E772A4AB5B500D49979 /* FirebaseGoogleAuthUI */; };
+		25121E7A2A4ABD7F00D49979 /* FirebaseEmailAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E792A4ABD7F00D49979 /* FirebaseEmailAuthUI */; };
+		25121E7D2A4B484000D49979 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 25121E7C2A4B484000D49979 /* GoogleSignIn */; };
+		25121E7F2A4B6FBD00D49979 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25121E7E2A4B6FBD00D49979 /* GoogleService-Info.plist */; };
+		25121E822A4D53A900D49979 /* AccountDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E812A4D53A900D49979 /* AccountDataModel.swift */; };
+		25121E842A4D56FC00D49979 /* AccountRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25121E832A4D56FC00D49979 /* AccountRequestProvider.swift */; };
 		251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E684E2A32445400498F08 /* DrinkDetailViewController.swift */; };
 		251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */; };
 		256FC2972A30E30800355378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2962A30E30800355378 /* AppDelegate.swift */; };
 		256FC2992A30E30800355378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC2982A30E30800355378 /* SceneDelegate.swift */; };
-		256FC29B2A30E30800355378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FC29A2A30E30800355378 /* ViewController.swift */; };
 		256FC29E2A30E30800355378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256FC29C2A30E30800355378 /* Main.storyboard */; };
 		256FC2A02A30E30A00355378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256FC29F2A30E30A00355378 /* Assets.xcassets */; };
 		256FC2A32A30E30A00355378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256FC2A12A30E30A00355378 /* LaunchScreen.storyboard */; };
@@ -39,19 +55,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		25121E0C2A40021000D49979 /* NotificationName+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+.swift"; sourceTree = "<group>"; };
 		25121E112A4024DF00D49979 /* OrderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataModel.swift; sourceTree = "<group>"; };
 		25121E132A402FBF00D49979 /* OrderRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestProvider.swift; sourceTree = "<group>"; };
 		25121E172A42DDA600D49979 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		25121E1B2A42E4E600D49979 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		25121E432A48129D00D49979 /* ShoppingCartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartButton.swift; sourceTree = "<group>"; };
-		251E684A2A31CB1400498F08 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		25121E532A49736D00D49979 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		25121E562A49997C00D49979 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		25121E582A49F03100D49979 /* ProfileTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopView.swift; sourceTree = "<group>"; };
+		25121E5B2A4A065300D49979 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		25121E5E2A4A0A7200D49979 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		25121E612A4A886C00D49979 /* UserRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestProvider.swift; sourceTree = "<group>"; };
+		25121E632A4A8D5200D49979 /* SignUpAndInAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAndInAccountView.swift; sourceTree = "<group>"; };
+		25121E652A4A8DED00D49979 /* SignUpAndInAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAndInAccountViewController.swift; sourceTree = "<group>"; };
+		25121E7E2A4B6FBD00D49979 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		25121E812A4D53A900D49979 /* AccountDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataModel.swift; sourceTree = "<group>"; };
+		25121E832A4D56FC00D49979 /* AccountRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequestProvider.swift; sourceTree = "<group>"; };
 		251E684E2A32445400498F08 /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
 		251E68512A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		256FC2932A30E30800355378 /* OrderDrinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderDrinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256FC2962A30E30800355378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		256FC2982A30E30800355378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		256FC29A2A30E30800355378 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		256FC29D2A30E30800355378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		256FC29F2A30E30A00355378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		256FC2A22A30E30A00355378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +103,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25121E6A2A4AB06700D49979 /* FirebaseAnalytics in Frameworks */,
+				25121E762A4AB5B500D49979 /* FirebaseAuthUI in Frameworks */,
+				25121E6C2A4AB06700D49979 /* FirebaseAuth in Frameworks */,
+				25121E782A4AB5B500D49979 /* FirebaseGoogleAuthUI in Frameworks */,
+				25121E7A2A4ABD7F00D49979 /* FirebaseEmailAuthUI in Frameworks */,
 				FDFCF1D733C7E69C7E59AF80 /* Pods_OrderDrinkApp.framework in Frameworks */,
+				25121E702A4AB06700D49979 /* FirebaseStorage in Frameworks */,
+				25121E6E2A4AB06700D49979 /* FirebaseFirestoreSwift in Frameworks */,
+				25121E7D2A4B484000D49979 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +133,58 @@
 				25121E432A48129D00D49979 /* ShoppingCartButton.swift */,
 			);
 			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		25121E522A49732A00D49979 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				25121E532A49736D00D49979 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		25121E552A49992800D49979 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				25121E562A49997C00D49979 /* ProfileCollectionViewCell.swift */,
+				25121E582A49F03100D49979 /* ProfileTopView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		25121E5A2A4A04B900D49979 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				25121E5B2A4A065300D49979 /* WelcomeView.swift */,
+				25121E632A4A8D5200D49979 /* SignUpAndInAccountView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		25121E5D2A4A0A3300D49979 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				25121E5E2A4A0A7200D49979 /* WelcomeViewController.swift */,
+				25121E652A4A8DED00D49979 /* SignUpAndInAccountViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		25121E602A4A87E300D49979 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				25121E612A4A886C00D49979 /* UserRequestProvider.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		25121E802A4D538A00D49979 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				25121E812A4D53A900D49979 /* AccountDataModel.swift */,
+				25121E832A4D56FC00D49979 /* AccountRequestProvider.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		251E684D2A32436C00498F08 /* DrinkDetail */ = {
@@ -126,6 +210,8 @@
 			children = (
 				257C8E2E2A340A9400BCF65C /* Menu */,
 				25121E0E2A40245600D49979 /* Order */,
+				25121E602A4A87E300D49979 /* Login */,
+				25121E802A4D538A00D49979 /* Account */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,11 +243,11 @@
 				256FC2AA2A30E3C200355378 /* Controller */,
 				256FC2962A30E30800355378 /* AppDelegate.swift */,
 				256FC2982A30E30800355378 /* SceneDelegate.swift */,
-				256FC29A2A30E30800355378 /* ViewController.swift */,
 				256FC29C2A30E30800355378 /* Main.storyboard */,
 				256FC29F2A30E30A00355378 /* Assets.xcassets */,
 				256FC2A12A30E30A00355378 /* LaunchScreen.storyboard */,
 				256FC2A42A30E30A00355378 /* Info.plist */,
+				25121E7E2A4B6FBD00D49979 /* GoogleService-Info.plist */,
 			);
 			path = OrderDrinkApp;
 			sourceTree = "<group>";
@@ -169,10 +255,12 @@
 		256FC2AA2A30E3C200355378 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				256FC2AE2A30E8F900355378 /* Menu */,
+				25121E522A49732A00D49979 /* Profile */,
+				25121E5D2A4A0A3300D49979 /* Login */,
+				257C8E642A3C589600BCF65C /* ShoppingCart */,
 				256FC2AB2A30E40000355378 /* TabBarViewController.swift */,
 				256FC2D92A31A79200355378 /* NavigationController.swift */,
-				256FC2AE2A30E8F900355378 /* Menu */,
-				257C8E642A3C589600BCF65C /* ShoppingCart */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				256FC2D62A319D8800355378 /* Menu */,
+				25121E552A49992800D49979 /* Profile */,
+				25121E5A2A4A04B900D49979 /* Login */,
 				257C8E672A3CB46600BCF65C /* ShoppingCart */,
 			);
 			path = View;
@@ -208,8 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				256FC2DC2A31B44200355378 /* UIColor+.swift */,
-				251E684A2A31CB1400498F08 /* UIViewController+.swift */,
-				25121E0C2A40021000D49979 /* NotificationName+.swift */,
 				25121E172A42DDA600D49979 /* UIView+.swift */,
 				25121E1B2A42E4E600D49979 /* UIImageView+.swift */,
 			);
@@ -295,6 +383,16 @@
 			dependencies = (
 			);
 			name = OrderDrinkApp;
+			packageProductDependencies = (
+				25121E692A4AB06700D49979 /* FirebaseAnalytics */,
+				25121E6B2A4AB06700D49979 /* FirebaseAuth */,
+				25121E6D2A4AB06700D49979 /* FirebaseFirestoreSwift */,
+				25121E6F2A4AB06700D49979 /* FirebaseStorage */,
+				25121E752A4AB5B500D49979 /* FirebaseAuthUI */,
+				25121E772A4AB5B500D49979 /* FirebaseGoogleAuthUI */,
+				25121E792A4ABD7F00D49979 /* FirebaseEmailAuthUI */,
+				25121E7C2A4B484000D49979 /* GoogleSignIn */,
+			);
 			productName = OrderDrinkApp;
 			productReference = 256FC2932A30E30800355378 /* OrderDrinkApp.app */;
 			productType = "com.apple.product-type.application";
@@ -323,6 +421,11 @@
 				Base,
 			);
 			mainGroup = 256FC28A2A30E30800355378;
+			packageReferences = (
+				25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				25121E742A4AB5B500D49979 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */,
+				25121E7B2A4B484000D49979 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 256FC2942A30E30800355378 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				256FC2A32A30E30A00355378 /* LaunchScreen.storyboard in Resources */,
+				25121E7F2A4B6FBD00D49979 /* GoogleService-Info.plist in Resources */,
 				256FC2A02A30E30A00355378 /* Assets.xcassets in Resources */,
 				256FC29E2A30E30800355378 /* Main.storyboard in Resources */,
 			);
@@ -396,25 +500,32 @@
 				256FC2AC2A30E40000355378 /* TabBarViewController.swift in Sources */,
 				25121E122A4024DF00D49979 /* OrderDataModel.swift in Sources */,
 				257C8E662A3C59B300BCF65C /* ShoppingCartViewController.swift in Sources */,
+				25121E842A4D56FC00D49979 /* AccountRequestProvider.swift in Sources */,
 				257C8E692A3CB50200BCF65C /* ShoppingCartCollectionViewCell.swift in Sources */,
+				25121E622A4A886C00D49979 /* UserRequestProvider.swift in Sources */,
 				251E68522A324E4C00498F08 /* DrinkDetailCollectionViewCell.swift in Sources */,
 				256FC2DD2A31B44200355378 /* UIColor+.swift in Sources */,
 				256FC2B22A30F18100355378 /* MenuViewController.swift in Sources */,
-				256FC29B2A30E30800355378 /* ViewController.swift in Sources */,
 				251E684F2A32445400498F08 /* DrinkDetailViewController.swift in Sources */,
-				25121E0D2A40021000D49979 /* NotificationName+.swift in Sources */,
+				25121E542A49736D00D49979 /* ProfileViewController.swift in Sources */,
 				256FC2972A30E30800355378 /* AppDelegate.swift in Sources */,
 				25121E1C2A42E4E600D49979 /* UIImageView+.swift in Sources */,
-				251E684B2A31CB1400498F08 /* UIViewController+.swift in Sources */,
+				25121E5C2A4A065300D49979 /* WelcomeView.swift in Sources */,
+				25121E642A4A8D5200D49979 /* SignUpAndInAccountView.swift in Sources */,
+				25121E592A49F03100D49979 /* ProfileTopView.swift in Sources */,
 				256FC2992A30E30800355378 /* SceneDelegate.swift in Sources */,
 				257C8E322A341CE700BCF65C /* MenuDataModel.swift in Sources */,
 				25121E442A48129D00D49979 /* ShoppingCartButton.swift in Sources */,
 				257C8E5C2A3817F300BCF65C /* CustomItemModel.swift in Sources */,
+				25121E662A4A8DED00D49979 /* SignUpAndInAccountViewController.swift in Sources */,
+				25121E5F2A4A0A7200D49979 /* WelcomeViewController.swift in Sources */,
+				25121E572A49997C00D49979 /* ProfileCollectionViewCell.swift in Sources */,
 				257C8E592A38153300BCF65C /* SelectionButton.swift in Sources */,
 				257C8E302A340AE800BCF65C /* MenuRequestProvider.swift in Sources */,
 				256FC2DA2A31A79200355378 /* NavigationController.swift in Sources */,
 				25121E142A402FBF00D49979 /* OrderRequestProvider.swift in Sources */,
 				257C8E5E2A39603C00BCF65C /* DrinkDetailBottomView.swift in Sources */,
+				25121E822A4D53A900D49979 /* AccountDataModel.swift in Sources */,
 				256FC2D82A319D9900355378 /* MenuCollectionViewCell.swift in Sources */,
 				25121E182A42DDA600D49979 /* UIView+.swift in Sources */,
 			);
@@ -636,6 +747,76 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		25121E742A4AB5B500D49979 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/FirebaseUI-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+		25121E7B2A4B484000D49979 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		25121E692A4AB06700D49979 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		25121E6B2A4AB06700D49979 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		25121E6D2A4AB06700D49979 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		25121E6F2A4AB06700D49979 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E682A4AB06700D49979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		25121E752A4AB5B500D49979 /* FirebaseAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E742A4AB5B500D49979 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseAuthUI;
+		};
+		25121E772A4AB5B500D49979 /* FirebaseGoogleAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E742A4AB5B500D49979 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseGoogleAuthUI;
+		};
+		25121E792A4ABD7F00D49979 /* FirebaseEmailAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E742A4AB5B500D49979 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseEmailAuthUI;
+		};
+		25121E7C2A4B484000D49979 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25121E7B2A4B484000D49979 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 256FC28B2A30E30800355378 /* Project object */;
 }

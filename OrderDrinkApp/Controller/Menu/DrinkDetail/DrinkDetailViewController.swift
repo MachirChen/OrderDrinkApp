@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class DrinkDetailViewController: UIViewController {
     
@@ -44,7 +43,7 @@ class DrinkDetailViewController: UIViewController {
         collectionView.register(DrinkDetailCollectionViewCell.self, forCellWithReuseIdentifier: DrinkDetailCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .kebukeBlue
+        collectionView.backgroundColor = .kebukeYellow
         collectionView.frame = view.bounds
         view.addSubview(collectionView)
     }
@@ -52,13 +51,8 @@ class DrinkDetailViewController: UIViewController {
     private func setupBottomView() {
         let bottomControlViewY = view.bounds.height - 90
         bottomView.frame = CGRect(x: 0, y: bottomControlViewY, width: view.bounds.width, height: view.bounds.height)
-        view.addSubview(bottomView)
-        print(bottomView.frame.size)
-        print(bottomView.bounds.size)
-        print(bottomView.frame.origin)
-        print(self.view.frame.size)
-        print(bottomView.frame.minY)
         bottomView.delegate = self
+        view.addSubview(bottomView)
     }
     
     private func setupCollectionViewLayoutItemSize(maxY: CGFloat) {

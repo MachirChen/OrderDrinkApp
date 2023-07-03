@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Kingfisher
 
 protocol DrinkDetailCollectionViewCellDelegate: AnyObject {
     func didTapSizeButton(_ sender: SelectionButton, buttons: [SelectionButton], background: UIView)
@@ -93,7 +92,7 @@ class DrinkDetailCollectionViewCell: UICollectionViewCell {
         return toppingBackgroundView.frame.maxY
     }
     
-    func layoutCell(drinkInfo: Record, size: [Item], temperature: [Item], sweetness: [Item], toppings: [Item]) {
+    public func layoutCell(drinkInfo: Record, size: [Item], temperature: [Item], sweetness: [Item], toppings: [Item]) {
         let drinkInfo = drinkInfo.fields
         self.nameLabel.text = drinkInfo.name
         self.priceLabel.text = "$\(drinkInfo.medium)"

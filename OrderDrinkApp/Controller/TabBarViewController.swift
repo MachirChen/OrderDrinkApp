@@ -9,50 +9,55 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    let menuController = MenuViewController()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let navController = UINavigationController(rootViewController: menuController)
-        //menuController.tabBarItem.image = UIImage(systemName: "menucard")
-        //menuController.tabBarItem.title = "菜單"
-        //tabBar.tintColor = .gray
-        //tabBar.backgroundColor = .black
         setUpChildViewControllers()
-        
         let appearance = UITabBarAppearance()
         appearance.backgroundColor = .kebukeBlue
         tabBar.standardAppearance = appearance
+        delegate = self
     }
     
     private func setUpChildViewControllers() {
-        addChildViewController(childController: MenuViewController(), title: "訂購")
+        addChildViewController(childController: MenuViewController(), title: "訂購", image: "menucard")
+        addChildViewController(childController: ProfileViewController(), title: "我的", image: "line.3.horizontal")
     }
     
     
-    private func addChildViewController(childController: UIViewController, title: String) {
+    private func addChildViewController(childController: UIViewController, title: String, image: String) {
         childController.title = title
-//        childController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.init(red: 176.0/255.0, green: 196.0/255.0, blue: 222.0/255.0, alpha: 1)], for: .selected)
-        childController.tabBarItem.image = UIImage(systemName: "menucard")
-        //childController.tabBarItem.selectedImage = UIImage.init(named: seletedImage)
+        childController.tabBarItem.image = UIImage(systemName: image)
         let navigationController = NavigationController.init(rootViewController: childController)
-        //navigationController.navigationBar.barTintColor = .white
-//        tabBar.isTranslucent = false
-//        tabBar.barTintColor = .kebukeBlue
-//        UITabBar.appearance().barTintColor = .kebukeBlue
-        //tabBar.backgroundColor = .kebukeBlue
         self.addChild(navigationController)
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if UserRequestProvider.shared.currentUser == nil {
+            switch viewController {
+            case viewControllers?[0]:
+                return true
+            default:
+                presentWelcomePage()
+                return false
+            }
+        } else {
+            return true
+        }
     }
-    */
-
+    
+    func presentWelcomePage() {
+        let controller = WelcomeViewController()
+        let navController = NavigationController(rootViewController: controller)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
+    
 }

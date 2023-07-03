@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import Alamofire
-import Kingfisher
 
 class MenuCollectionViewCell: UICollectionViewCell {
     
@@ -73,14 +71,10 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func layoutCell(drinkData: Record) {
-        self.nameLabel.text = drinkData.fields.name
-        self.priceLabel.text = "$\(drinkData.fields.medium)"
-        self.drinkImageView.image = UIImage(named: "白玉歐蕾")
-        let imageURL = URL(string: drinkData.fields.image[0].url)
-        self.drinkImageView.kf.indicatorType = .activity
-        self.drinkImageView.kf.setImage(with: imageURL)
-        
+    public func layoutCell(drinkData: Record) {
+        nameLabel.text = drinkData.fields.name
+        priceLabel.text = "$\(drinkData.fields.medium)"
+        drinkImageView.fetchImage(url: drinkData.fields.image[0].url)
     }
 
     

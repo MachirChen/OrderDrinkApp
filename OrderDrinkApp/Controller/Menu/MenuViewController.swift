@@ -16,7 +16,6 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         setupCollectionView()
         setupNavigationBar()
         setupSearchController()
@@ -25,13 +24,12 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear")
         updateShoppingCartButtonAppearance()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+//        collectionView.frame = view.bounds
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -64,6 +62,7 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .kebukeBlue
+        collectionView.frame = view.bounds
         view.addSubview(collectionView)
     }
     

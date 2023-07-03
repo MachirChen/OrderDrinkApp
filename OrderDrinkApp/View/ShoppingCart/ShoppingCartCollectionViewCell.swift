@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol ShoppingCartCollectionViewCellDelegate: AnyObject {
     func didTapMinusButton(in cell: ShoppingCartCollectionViewCell)
@@ -88,8 +89,6 @@ class ShoppingCartCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -148,17 +147,17 @@ class ShoppingCartCollectionViewCell: UICollectionViewCell {
     func layoutCell(drink order: OrderResponse.Record) {
         guard let imageUrlStr = order.fields.image[0].url else { return }
         let imageURL = URL(string: imageUrlStr)
-        self.drinkImageView.kf.indicatorType = .activity
-        self.drinkImageView.kf.setImage(with: imageURL)
+        drinkImageView.kf.indicatorType = .activity
+        drinkImageView.kf.setImage(with: imageURL)
         
-        self.drinkNameLabel.text = order.fields.drink
+        drinkNameLabel.text = order.fields.drink
         if let toppings = order.fields.toppings {
-            self.drinkCustomLabel.text = "\(order.fields.temperature), \(order.fields.sweetness), \(toppings)"
+            drinkCustomLabel.text = "\(order.fields.temperature), \(order.fields.sweetness), \(toppings)"
         } else {
-            self.drinkCustomLabel.text = "\(order.fields.temperature), \(order.fields.sweetness)"
+            drinkCustomLabel.text = "\(order.fields.temperature), \(order.fields.sweetness)"
         }
-        self.drinkPriceLabel.text = "$\(order.fields.price)"
-        self.quantityLabel.text = "\(order.fields.quantity)"
+        drinkPriceLabel.text = "$\(order.fields.price)"
+        quantityLabel.text = "\(order.fields.quantity)"
     }
     
     

@@ -37,7 +37,6 @@ class ShoppingCartViewController: UIViewController {
             return UISwipeActionsConfiguration(actions: [deleteAction])
         }
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
-        
     }
     
     private func fetchData() {
@@ -87,23 +86,8 @@ extension ShoppingCartViewController: UICollectionViewDataSource {
 extension ShoppingCartViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let drinkDetailVC = DrinkDetailViewController()
-//        let menuVC = MenuViewController()
-//        var menu: Record?
-//        for drink in menuVC.menu {
-//            if drink.fields.name == orderList[indexPath.item].fields.drink {
-//                menu = drink
-//            }
-//        }
-//        drinkDetailVC.drinkInfo = menu
-//        navigationController?.pushViewController(drinkDetailVC, animated: true)
-        print(indexPath)
+        
     }
-    
-//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-//        <#code#>
-//    }
-    
     
 }
 

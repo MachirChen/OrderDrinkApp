@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import SnapKit
 
 class ShoppingCartButton: UIButton {
     
-    let unpaidLightView: UIView = {
+    public let unpaidLightView: UIView = {
         let view = UIView()
         view.cornerRadii(radii: 4)
         return view

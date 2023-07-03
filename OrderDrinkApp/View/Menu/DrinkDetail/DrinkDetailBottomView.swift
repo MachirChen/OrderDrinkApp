@@ -18,7 +18,7 @@ class DrinkDetailBottomView: UIView {
     
     weak var delegate: DrinkDetailBottomViewDelegate?
     
-    let orderButton: UIButton = {
+    private let orderButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("加入購物車", for: .normal)
         button.backgroundColor = .gray
@@ -85,7 +85,7 @@ class DrinkDetailBottomView: UIView {
         stackView.distribution = .equalCentering
         addSubview(stackView)
         addSubview(orderButton)
-        self.backgroundColor = .kebukeBlue
+        backgroundColor = .kebukeBlue
         
         stackView.snp.makeConstraints { make in
             make.centerY.equalTo(orderButton)
